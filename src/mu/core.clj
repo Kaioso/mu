@@ -43,8 +43,7 @@
                     
                     (show-process-vars [this vars]
                       (config! vars-display
-                               ;; The exception is probably happening here.
-                               :model (table/table-model (concat row-columns [:rows vars]))))
+                               :model (apply table/table-model (concat row-columns [:rows vars]))))
                     
                     (start-up [this]
                       (-> main-frame
